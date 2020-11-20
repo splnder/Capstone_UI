@@ -5,23 +5,27 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:layout_gravity="center"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="괜찮아요"
+        android:label=""
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".FalldownList"></activity>
+        <activity android:name=".GPSList" />
+        <activity android:name=".ActivityList" />
+        <activity android:name=".AlarmActivity" />
+        <activity android:name=".OptionActivity" />
+        <activity android:name=".ClientLoginActivity" />
+        <activity android:name=".ClientLoginRegisterActivity" />
+        <activity android:name=".ClientMainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-        <activity android:name=".ClientLoginActivity">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-        <activity android:name=".ClientLoginRegisterActivity"/>
-        <activity android:name=".ClientMainActivity"/> >
-
     </application>
 
 </manifest>
