@@ -6,6 +6,8 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -18,6 +20,7 @@ import com.google.android.material.navigation.NavigationView;
  public class ClientMainActivity extends AppCompatActivity
 {
     Toolbar toolbar;
+    private Button button1, button2, button3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -30,6 +33,39 @@ import com.google.android.material.navigation.NavigationView;
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        button1 = findViewById(R.id.button1);
+        button2 = findViewById(R.id.button2);
+        button3 = findViewById(R.id.button3);
+
+        button1.setOnClickListener(new View.OnClickListener() // 회원가입 버튼 클릭 시
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent3 = new Intent(ClientMainActivity.this, ActivityList.class);
+                startActivity(intent3);
+            }
+        });
+
+        button2.setOnClickListener(new View.OnClickListener() // 회원가입 버튼 클릭 시
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent4 = new Intent(ClientMainActivity.this, FalldownList.class);
+                startActivity(intent4);
+            }
+        });
+
+        button3.setOnClickListener(new View.OnClickListener() // 회원가입 버튼 클릭 시
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent5 = new Intent(ClientMainActivity.this, GPSList.class);
+                startActivity(intent5);
+            }
+        });
     }
 
     @Override
@@ -50,10 +86,12 @@ import com.google.android.material.navigation.NavigationView;
                 break;
 
             case R.id.item2:
-
+                Intent intent2 = new Intent(ClientMainActivity.this, AlarmList.class);
+                startActivity(intent2);
                 break;
         }
-
         return super.onOptionsItemSelected(item);
+
+
     }
 }
